@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item-->
+        <!--android:icon="@drawable/ic_search"-->
+        <!--android:id="@+id/action_search"-->
+        <!--android:orderInCategory="0"-->
+        <!--android:title="@string/action_search"-->
+        <!--app:showAsAction="always"-->
+        <!--app:actionViewClass="android.support.v7.widget.SearchView" />-->
+    <item
+        android:icon="@drawable/ic_filter"
+        android:id="@+id/action_filter"
+        android:orderInCategory="1"
+        android:title="Filter"
+        app:showAsAction="always"/>
+    <!--<item-->
+        <!--android:id="@+id/action_popular"-->
+        <!--android:orderInCategory="1"-->
+        <!--android:title="Popular Movies"-->
+        <!--app:showAsAction="collapseActionView"/>-->
+    <!--<item-->
+        <!--android:id="@+id/action_top_rated"-->
+        <!--android:orderInCategory="2"-->
+        <!--android:title="Top Rated Movies"-->
+        <!--app:showAsAction="collapseActionView"/>-->
+    <!--<item-->
+        <!--android:id="@+id/action_now_playing"-->
+        <!--android:orderInCategory="3"-->
+        <!--android:title="Now Playing Movies"-->
+        <!--app:showAsAction="collapseActionView"/>-->
+    <!--<item-->
+        <!--android:id="@+id/action_upcoming"-->
+        <!--android:orderInCategory="4"-->
+        <!--android:title="Upcoming Movies"-->
+        <!--app:showAsAction="collapseActionView"/>-->
+</menu>

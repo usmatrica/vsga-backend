@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/D'Movie.iml" filepath="$PROJECT_DIR$/D'Movie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DMovie.iml" filepath="$PROJECT_DIR$/.idea/modules/DMovie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DMovie.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DMovie.app.iml" />
+    </modules>
+  </component>
+</project>

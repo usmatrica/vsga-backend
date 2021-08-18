@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.vsga.backend.movie.MovieDetailActivity"
+    tools:showIn="@layout/activity_movie_detail"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/detail_margin"
+            android:layout_marginRight="@dimen/detail_margin">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorColor="@color/colorAccent"
+                        app:indicatorName="BallScaleRippleMultipleIndicator"/>
+
+                    <ImageView
+                        android:id="@+id/iv_poster"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/detail_margin"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/detail_margin">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/item_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_title_desc"/>
+
+                    <TextView
+                        android:id="@+id/tv_release"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_runtime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/btn_favorite"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="bottom|end"
+                            android:src="@drawable/ic_favorite_empty" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                style="@style/lineStyle" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/ic_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    android:id="@+id/tv_rating"
+                    android:textSize="39sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_marginLeft="@dimen/line_margin"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textColor="@color/colorAccentLight"
+                        android:text="/ 10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/ic_person"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp" />
+
+                        <TextView
+                            android:textColor="@color/colorAccentLight"
+                            android:id="@+id/tv_vote_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                style="@style/lineStyle" />
+
+            <TextView
+                android:id="@+id/tv_overview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="1dp"
+                android:lineSpacingMultiplier="1.2"
+                android:layout_marginBottom="@dimen/line_margin"/>
+
+            <TextView
+                android:id="@+id/tv_readmore"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:text="Read More"
+                android:layout_marginBottom="@dimen/line_margin"/>
+
+            <TableLayout
+                android:visibility="gone"
+                android:id="@+id/tl_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/line_margin">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Original Title"
+                        style="@style/descName"/>
+                    <TextView
+                        android:id="@+id/tv_ori_title"
+                        style="@style/descContent"/>
+                </TableRow>
+                <TableRow
+                    style="@style/tableRowStyle">
+                    <TextView
+                        android:text="Original Language"
+                        style="@style/descName"/>
+                    <TextView
+                        android:id="@+id/tv_ori_lan"
+                        style="@style/descContent"/>
+                </TableRow>
+                <TableRow
+                    style="@style/tableRowStyle">
+                    <TextView
+                        android:text="Genre"
+                        style="@style/descName"/>
+                    <TextView
+                        android:id="@+id/tv_genre"
+                        style="@style/descContent"/>
+                </TableRow>
+                <TableRow
+                    style="@style/tableRowStyle">
+                    <TextView
+                        android:text="Tagline"
+                        style="@style/descName"/>
+                    <TextView
+                        android:id="@+id/tv_tag"
+                        style="@style/descContent"/>
+                </TableRow>
+                <TableRow
+                    style="@style/tableRowStyle">
+                    <TextView
+                        android:text="Homepage"
+                        style="@style/descName"/>
+                    <TextView
+                        android:id="@+id/tv_home"
+                        style="@style/descContent"
+                        android:autoLink="web"
+                        android:linksClickable="true"/>
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_trailer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="@dimen/line_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_title_desc"
+                android:textStyle="bold"
+                android:text="Trailer"
+                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginBottom="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/detail_margin"
+                android:layout_marginRight="@dimen/detail_margin"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:layout_marginBottom="@dimen/card_movie_radius">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_trailer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+                <TextView
+                    android:id="@+id/tv_no_trailer"
+                    android:visibility="gone"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="No Trailers Available"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_reviews"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/detail_margin"
+            android:layout_marginRight="@dimen/detail_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/item_text"
+                android:textSize="@dimen/text_title_desc"
+                android:textStyle="bold"
+                android:text="Reviews"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:layout_marginBottom="@dimen/line_margin">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_reviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+
+                <TextView
+                    android:id="@+id/tv_no_review"
+                    android:visibility="gone"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="No Review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_allreview"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    style="@style/lineStyle" />
+
+                <TextView
+                    android:padding="@dimen/item_margin"
+                    android:textSize="@dimen/text_loading"
+                    android:textColor="@color/colorAccent"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:text="All REVIEW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    style="@style/lineStyle" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
